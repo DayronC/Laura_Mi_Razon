@@ -1,0 +1,100 @@
+/* General */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #fff7c2, #fddc7a);
+  overflow: hidden;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mensaje principal */
+.mensaje {
+  z-index: 2;
+  position: absolute;
+  top: 10%;
+  width: 90%;
+}
+
+.mensaje h1 {
+  font-size: 1.5rem;
+  color: #4a3c00;
+  text-shadow: 1px 1px 3px rgba(255,255,0,0.6);
+}
+
+/* Caja de regalo */
+.regalo-container {
+  position: absolute;
+  bottom: 50%;
+  text-align: center;
+  z-index: 2;
+}
+
+.regalo {
+  width: 200px;
+  cursor: pointer;
+  animation: saltar 1.5s infinite;
+}
+
+@keyframes saltar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.regalo-container p {
+  font-size: 1rem;
+  margin-top: 5px;
+  color: #333;
+}
+
+/* Sorpresa oculta */
+.sorpresa {
+  display: none;
+  position: fixed;   /* mejor que absolute para centrar en toda la pantalla */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centrado exacto */
+  text-align: center;
+  z-index: 3;
+}
+
+.ramo {
+  width: 280px;
+  animation: aparecer 2s ease-in-out forwards;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.sorpresa p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #4a3c00;
+  font-weight: bold;
+}
+
+/* Canvas de pétalos */
+#petalos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+/* Estilo especial para el Mensaje Final */
+#mensajeFinal {
+  font-family: 'Dancing Script', cursive; /* letra manuscrita */
+  font-size: 1.4rem; /* un poco más grande */
+  font-style: italic; /* cursiva */
+  line-height: 1.6; /* más espacio entre líneas para que se lea mejor */
+  color: #5a3a00; /* marrón cálido */
+  text-shadow: 1px 1px 3px rgba(255, 215, 0, 0.6); /* brillo dorado suave */
+  padding: 15px;
+}
+
