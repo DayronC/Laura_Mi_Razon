@@ -75,11 +75,7 @@ body {
   margin: auto;
 }
 
-.ramo-grande {
-  width: 360px;              /* tamaño del ramo */
-  display: block;
-  margin: 80px auto 30px;    /* espacio arriba y abajo */
-}
+
 
 .mensaje-final p {
   font-size: 1.3rem;
@@ -88,12 +84,14 @@ body {
   color: #4a3c00;
 }
 /* Animación para el ramo */
+/* Imagen del ramo */
 .ramo-grande {
-  width: 280px;
+  max-width: 90%;         /* ocupa hasta el 90% del ancho */
+  height: auto;           /* mantiene proporciones */
   display: block;
-  margin: 40px auto 30px;
-  opacity: 0;                  /* empieza invisible */
-  transform: scale(0.8);       /* empieza más pequeño */
+  margin: 20px auto;      /* espacio arriba y abajo */
+  opacity: 0;
+  transform: scale(0.8);
   animation: aparecerRamo 1.5s ease-in-out forwards;
 }
 
@@ -106,4 +104,11 @@ body {
     opacity: 1;
     transform: scale(1);
   }
+}
+body {
+  overflow-y: auto;       /* permite hacer scroll vertical */
+}
+
+html, body {
+  height: auto;           /* que no recorte el contenido */
 }
