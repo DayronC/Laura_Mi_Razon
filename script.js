@@ -1,5 +1,5 @@
 // Efecto máquina de escribir en index.html
-const text = "Hoy 21 de septiembre, que tengas un hermoso día así como tú ❤️";
+const text = "Laura: Hoy 21 de septiembre, que tengas un hermoso día así como tú ❤️";
 let i = 0;
 function typeWriter() {
   if (i < text.length) {
