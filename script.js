@@ -71,3 +71,7 @@ document.getElementById("abrirBtn").addEventListener("click", () => {
   musica.play();
 });
 
+// Al abrir el regalo → ir a sorpresa.html
+document.getElementById("abrirBtn").addEventListener("click", () => {
+  window.location.href = "sorpresa.html";
+});
