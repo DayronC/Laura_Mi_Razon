@@ -53,13 +53,6 @@ body {
   color: #333;
 }
 
-/* Canvas de pétalos */
-#petalos {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
 
 /* ----------- SORPRESA PAGE ----------- */
 .sorpresa-body {
@@ -113,25 +106,23 @@ body {
 html, body {
   height: auto;           /* que no recorte el contenido */
 }
+
 /* 🌻 Estilo de girasoles cayendo */
 .girasol {
-  position: absolute;
+  position: fixed;            /* que se quede flotando sobre la pantalla */
   top: -50px;
-  animation: caer 10s linear forwards, rotar 4s linear infinite;
+  z-index: 5;                 /* más alto que el fondo */
+  animation: caer 10s linear forwards, rotar 6s linear infinite;
   pointer-events: none;
   user-select: none;
+  will-change: transform;
 }
 
 @keyframes caer {
-  to {
-    transform: translateY(110vh);
-  }
+  from { transform: translateY(-50px) rotate(0deg); }
+  to   { transform: translateY(110vh) rotate(360deg); }
 }
 
-@keyframes rotar {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
 /* 🌼 Ramo con efecto flotante */
 .ramo-grande {
