@@ -76,9 +76,9 @@ body {
 }
 
 .ramo-grande {
-  width: 250px;
-  margin: 20px auto;
+  width: 360px;              /* tamaño del ramo */
   display: block;
+  margin: 40px auto 30px;    /* espacio arriba y abajo */
 }
 
 .mensaje-final p {
