@@ -3,15 +3,16 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(to bottom, #fff7c2, #ffd966);
-  overflow: hidden;
+  background: linear-gradient(to bottom, #fff7c2, #ffd966); /* mismo fondo cálido */
+  overflow-y: auto; /* scroll vertical si es necesario */
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 
 /* Mensaje principal */
 .mensaje {
@@ -111,4 +112,39 @@ body {
 
 html, body {
   height: auto;           /* que no recorte el contenido */
+}
+/* 🌻 Estilo de girasoles cayendo */
+.girasol {
+  position: absolute;
+  top: -50px;
+  animation: caer 10s linear forwards, rotar 4s linear infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes caer {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+@keyframes rotar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 🌼 Ramo con efecto flotante */
+.ramo-grande {
+  max-width: 90%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: aparecerRamo 1.5s ease-in-out forwards, flotante 4s ease-in-out infinite;
+}
+
+@keyframes flotante {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
 }

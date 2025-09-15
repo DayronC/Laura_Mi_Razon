@@ -1,5 +1,7 @@
-// Efecto máquina de escribir en index.html
-const text = "Laura: Hoy 21 de Septiembre, que tengas un hermoso día así como tú ❤️";
+// -------------------------------
+// Texto inicial con máquina de escribir
+// -------------------------------
+const text = "Laura: Hoy 21 de septiembre, que tengas un hermoso día así como tú ❤️";
 let i = 0;
 function typeWriter() {
   if (i < text.length) {
@@ -10,49 +12,34 @@ function typeWriter() {
 }
 window.onload = typeWriter;
 
+// -------------------------------
 // Al abrir el regalo → ir a sorpresa.html
+// -------------------------------
 document.getElementById("abrirBtn").addEventListener("click", () => {
   window.location.href = "sorpresa.html";
 });
 
-// Animación de pétalos cayendo en index.html
-const canvas = document.getElementById("petalos");
-if (canvas) {
-  const ctx = canvas.getContext("2d");
+// -------------------------------
+// 🌻 Girasoles cayendo en el fondo
+// -------------------------------
+function crearGirasol() {
+  const girasol = document.createElement("span");
+  girasol.textContent = "🌻";
+  girasol.classList.add("girasol");
 
-  let width = window.innerWidth;
-  let height = window.innerHeight;
-  canvas.width = width;
-  canvas.height = height;
+  // Posición horizontal aleatoria
+  girasol.style.left = Math.random() * window.innerWidth + "px";
 
-  const petalos = [];
-  for (let i = 0; i < 30; i++) {
-    petalos.push({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      size: Math.random() * 20 + 10,
-      speed: Math.random() * 2 + 1
-    });
-  }
+  // Tamaño aleatorio
+  girasol.style.fontSize = Math.random() * 20 + 20 + "px";
 
-  function dibujarPetalos() {
-    ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = "yellow";
+  document.body.appendChild(girasol);
 
-    petalos.forEach(p => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size / 2, 0, Math.PI * 2);
-      ctx.fill();
-
-      p.y += p.speed;
-      if (p.y > height) {
-        p.y = 0;
-        p.x = Math.random() * width;
-      }
-    });
-
-    requestAnimationFrame(dibujarPetalos);
-  }
-
-  dibujarPetalos();
+  // Eliminar después de 10 segundos
+  setTimeout(() => {
+    girasol.remove();
+  }, 10000);
 }
+
+// Generar un girasol cada 300ms
+setInterval(crearGirasol, 300);
