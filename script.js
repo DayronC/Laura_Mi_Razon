@@ -1,7 +1,7 @@
 // -------------------------------
 // Texto inicial con máquina de escribir
 // -------------------------------
-const text = "Laura: Hoy 21 de septiembre, que tengas un hermoso día así como tú ❤️";
+const text = "Flores amarillas para quien llena de alegría mi vida ❤️";
 let i = 0;
 function typeWriter() {
   if (i < text.length) {
